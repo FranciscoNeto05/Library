@@ -32,4 +32,7 @@ public class Loan {
 
     @Column(name = "end_date")
     private Date endDate;
+
+    @Column(name = "status")
+    private String status;
 }

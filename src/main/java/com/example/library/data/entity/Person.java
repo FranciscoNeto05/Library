@@ -4,12 +4,12 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "person")
@@ -19,11 +19,20 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cpf;
+    @Column(columnDefinition = "CHAR(11)")
+    private String cpf;
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "age")
+    private Long age;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "date_of_birth")
+    private Date dateOfBirth;
 
     @Column(columnDefinition = "CHAR(8)")
     private String cep;
